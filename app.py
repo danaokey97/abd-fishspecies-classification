@@ -44,7 +44,9 @@ def main():
             image = Image.open(uploaded_file)
             st.image(image, caption="Gambar yang diunggah", use_column_width=True)
 
-            st.warning("⏳ Memproses gambar...")
+            # Display temporary message
+            processing_message = st.empty()  # Create a placeholder
+            processing_message.warning("⏳ Memproses gambar...")
 
             # Preprocess the image
             processed_image = preprocess_image(image)
@@ -61,6 +63,9 @@ def main():
                 "Label 3 (Plectroglyphidodon Dickii)"
             ]
             predicted_label = labels[class_index]
+
+            # Clear the processing message
+            processing_message.empty()
 
             # Display prediction
             st.success(f"🎉 **Prediksi:** {predicted_label}")
