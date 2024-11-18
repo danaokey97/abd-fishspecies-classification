@@ -75,8 +75,9 @@ def main():
 
         st.success("Berhasil dekk!!")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
+
 
 # # Main Streamlit app
 # def main():
